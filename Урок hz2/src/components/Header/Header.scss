@@ -4,34 +4,23 @@
     background: #0B132B;
     justify-content: space-between;
 
-    p {
+    a {
         color: white;
+        text-decoration: none;
+        transition: .3s;
+        height: 20px;
+        
+        &:hover {
+            height: 20px;
+            font-size: 20px;
+        }
     }
 
     &__nav {
         display: flex;
 
-        p {
+        a {
             margin: 0 15px;
         }
     }
 }
-
-// .header {
-//     display: flex;
-//     padding: 32px 60px;
-//     background: #0B132B;
-//     justify-content: space-between;
-// }
-
-// .header p {
-//     color: white;
-// }
-
-// .header__nav {
-//     display: flex;
-// }
-
-// .header__nav p {
-//     margin: 0 15px;
-// }

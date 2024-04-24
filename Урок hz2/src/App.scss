@@ -5,5 +5,65 @@
 }
 
 .content {
-  
+    display: flex;
+
+    .textblock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        padding: 0 15px;
+    }
+
+    .content_title {
+        font-size: 40px;
+        margin: 20px 0 10px;
+    }
+
+    .adsblock {
+        margin: 20px;
+        display: flex;
+        padding: 30px 80px;
+        border-radius: 20px;
+        gap: 40px;
+        background: #5BC0BE;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: relative;
+
+        &.hide {
+            display: none;
+        }
+
+        img {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .title {
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+    
+}
+
+.spec {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.cards {
+    padding: 40px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
