@@ -17,11 +17,26 @@ const Tasks = () => {
     }, []);
 
     const addTask = async () => {
-        setTasks((prev) => [...prev, { title: text, deadline: deadline }]);
+        setTasks((prev) => [
+            ...prev,
+            { title: text, deadline: deadline, is_completed: false },
+        ]);
 
         const res = await $host.post("create_task", {
             title: text,
             deadline: deadline,
+        });
+    };
+
+    const change = async (ind) => {
+        setTasks((prev) =>
+            prev.map((i, index) =>
+                ind === index ? { ...i, is_completed: !i.is_completed } : i,
+            ),
+        );
+
+        const res = await $host.post("update_task", {
+            task_ind: ind,
         });
     };
 
@@ -47,6 +62,11 @@ const Tasks = () => {
                     <div key={ind} className="tasks__item">
                         {ind + 1}. {i.title}. Сделать до:{" "}
                         {new Date(i.deadline).toLocaleString()}
+                        <input
+                            type="checkbox"
+                            checked={i.is_completed}
+                            onChange={() => change(ind)}
+                        />
                     </div>
                 ))}
             </div>
