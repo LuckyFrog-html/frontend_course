@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header.jsx";
 import About from "./components/pages/About/About.jsx";
+import Tasks from "./components/pages/Tasks/Tasks.jsx";
 
 const Layout = () => (
     <>
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <About />,
+            },
+            {
+                path: "/goods",
+                element: <Tasks />,
             },
         ],
     },
